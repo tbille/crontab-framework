@@ -1,0 +1,11 @@
+<h1>My cron jobs</h1>
+
+{% if not cronjobs %}
+    <p>No cronjobs</p>
+{% else %}
+    <ul>
+    {% for cronjob in cronjobs %}
+        <li><strong>{{ cronjob["time"] }} {{ cronjob["command"] }}</strong> - next run {{ cronjob["nextRun"] }}</li>
+    {% endfor %}
+    <ul>
+{% endif %}
